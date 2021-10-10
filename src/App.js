@@ -1,16 +1,14 @@
-import React from 'react';
-import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
-import Nav from './Components/Nav';
-import Footer from './Components/Footer';
+import React, { Component } from 'react';
 import './App.css';
+import routes from './routes';
 
 class App extends Component {
 
   render() {
     return (
-      <HashRouter>
-        <App />
-      </HashRouter>
+      <div>
+        {routes}
+      </div>
     );
   }
 }

@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import Nav from './Nav';
-import Footer from './Footer';
+import React from 'react';
+import Nav from './Nav/Nav';
+import Footer from './Footer/Footer';
 
 const WomensProducts = (props) => {
 

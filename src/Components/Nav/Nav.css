@@ -1,0 +1,85 @@
+.nav {
+  width: 100vw;
+  height: 25vh;
+  display: flex;
+  background-color: #19191a;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  width: 50vw; 
+  justify-content: space-between;
+  padding-left: 20%;
+}
+
+.links {
+  color: white;
+  text-decoration: none;
+}
+
+.links:hover {
+  font-size: large;
+  color: #fb8b24;
+  font-weight: bold;
+}
+
+.brand-name-with-logo {
+  display: flex;
+  flex-direction: column;
+}
+
+.Logo {
+  width: 100px;
+  padding: 10px 0 0 20px;
+}
+
+.Logo:hover {
+  cursor: pointer;
+}
+
+.brand-name {
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  padding-left: 50%;
+}
+
+.brand-name:hover {
+  color: #fb8b24;
+  cursor: crosshair;
+}
+
+.search {
+  position: absolute;
+  top: 80px;
+  right: 50px;
+  width: 300px;
+  height: 120px;
+}
+
+.search-input {
+  width: 150px;
+  height: 25px;
+}
+
+.search-btn {
+  height: 30px;
+  width: 70px;
+  background-color: #0b090a;
+  color: white;
+  border-radius: 10%;
+  border: 2px solid white;
+}
+
+.search-btn:hover {
+  cursor: pointer;
+  color:#fb8b24;
+  border: 3px solid #fb8b24;
+}
+
+.cart-img {
+  width: 40px;
+  padding-left: 20px;
+}

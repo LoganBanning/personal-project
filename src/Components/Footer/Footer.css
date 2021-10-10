@@ -1,0 +1,45 @@
+.footer {
+  width: 100vw;
+  height: 25vh;
+  background-color: #19191a;
+  display: flex;
+  margin-top: 0;
+}
+
+.Logo {
+  width: 100px;
+  padding: 10px 0 0 20px;
+}
+
+.footer-logo {
+  display: flex;
+}
+
+.sub {
+  color: white;
+  margin: 0 8px 6px 0;
+}
+
+.subscribe {
+  display: flex;
+  width: 100vw;
+  margin: 70px 15px 15px 700px;
+}
+
+.subscribe-input {
+  width: 250px;
+  height: 20px;
+}
+
+.sub-btn {
+  height: 26px;
+  background-color: #19191a;
+  border: 2px solid white;
+  color: white;
+}
+
+.sub-btn:hover {
+  cursor: pointer;
+  color:#fb8b24;
+  border: 3px solid #fb8b24;
+}

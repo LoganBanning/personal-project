@@ -1,3 +1,4 @@
 import { createStore } from 'redux';
+import reducer, { updateCart } from './reducer';
 
-export default createStore;
+export default createStore(reducer, {updateCart});

@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
-import Nav from './Nav';
-import Footer from './Footer';
+import React from 'react';
+import Nav from './Nav/Nav';
+import Footer from './Footer/Footer';
 
-const cart = (props) => {
+const Cart = (props) => {
   return (
     <div>
       <Nav />
       <div>
       <img />
-      <div>{propsImg}</div>
-      <div>{propsDetails}</div>
+      {/* <div>{propsImg}</div> */}
+      {/* <div>{propsDetails}</div> */}
       {/* something to change quantity */}
       <button className='delete-btn'>DELETE</button>
       </div>
@@ -19,4 +19,4 @@ const cart = (props) => {
   )
 }
 
-export default cart;
+export default Cart;
