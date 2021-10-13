@@ -12,28 +12,32 @@ const Nav = (props) => {
   return (
     <div className='nav'>
       <div className='brand-name-with-logo'>
+        <Link to='/'>
         <Logo  />
+        </Link>
       </div>
       <div>
+        <Link className='links' to='/'>
       <h1 className='brand-name'>APE</h1>
+        </Link>
         <nav className='nav-links'>
-          <Link to='/mensComponent/'>
-            <div className='links'>MENS</div>
+          <Link className='links' to='/mens'>
+            <div>MENS</div>
           </Link>
-          <Link to='/womensComponent/'>
-            <div className='links'>WOMENS</div>
+          <Link className='links' to='/womens'>
+            <div>WOMENS</div>
           </Link>
-          <Link>
-            <div className='links'>KIDS</div>
+          <Link className='links'>
+            <div>KIDS</div>
           </Link>
-          <Link>
-            <div className='links'>SURF</div>
+          <Link className='links'>
+            <div>SURF</div>
           </Link>
-          <Link>
-            <div className='links'>SNOW</div>
+          <Link className='links'>
+            <div>SNOW</div>
           </Link>
-          <Link>
-            <div className='links'>SALE</div>
+          <Link className='links'>
+            <div>SALE</div>
           </Link>
         </nav>
       </div>

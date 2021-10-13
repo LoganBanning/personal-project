@@ -3,6 +3,9 @@ const express = require('express');
 const massive = require('massive');
 const { CONNECTION_STRING, SERVER_PORT, SESSION_SECRET  } = process.env;
 const session = require('express-session');
+const productsCtrl = require('./controllers/products');
+const addToProCtrl = require('./controllers/addToCart');
+const addSub = require('./controllers/addSub');
 
 
 const app = express();
@@ -26,6 +29,11 @@ app.use(session({
   saveUninitialized: false,
   secret: SESSION_SECRET, 
   cookie: { maxAge: 1000 * 60 * 24 * 30 },
-}))
+}));
+
+app.get("/api/products/:gender", productsCtrl.getProducts);
+app.get('/api/cart_items/:id', addToProCtrl.addToCart);
+app.post('/api/subscribers', addSub.subscribe);
+
 
 app.listen(PORT, () => console.log(`running on ${PORT}`));
