@@ -2,6 +2,7 @@ const subscribe = async (req, res) => {
   const { email } = req.body;
   const db = req.app.get('db');
   const result = await db.find_sub_by_email([email]);
+
   const existingSub = result[0];
   if(existingSub){
     return res.status(409).send('Already Subscribed!');
