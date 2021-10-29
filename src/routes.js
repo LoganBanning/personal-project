@@ -4,7 +4,7 @@ import Landing from './Components/Landing/Landing';
 //import mensComponent from './Components/mensComponent';
 //import womensComponent from './Components/womensComponent';
 import registerComponent from './Components/registerComponent';
-import cartComponent from './Components/cartComponent';
+import cartComponent from './Components/Cart/cartComponent';
 import Products from './Components/products';
 
 export default (

@@ -5,9 +5,17 @@ import { connect } from 'react-redux';
 import Logo from '../Logo';
 import './Nav.css';
 import CartImage from '../Images/CartImage';
+import {AiOutlineShoppingCart} from 'react-icons/ai';
+import Cart from '../Cart/cartComponent';
+
 
 const Nav = (props) => {
   const [search, setSearch] = useState('');
+  const [ isCartOpen, setIsCartOpen ] = useState(false)
+
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen);
+  }
 
   return (
     <div className='nav'>
@@ -44,7 +52,8 @@ const Nav = (props) => {
       <div className='search'>
       <input className='search-input' onChange={(e) => setSearch(e.target.value)}></input>
       <button className='search-btn'>SEARCH</button>
-      <CartImage />
+      <AiOutlineShoppingCart  className='cart-img' onClick={toggleCart} />
+      <Cart visible={isCartOpen}/>
       </div>
     </div>
   )
