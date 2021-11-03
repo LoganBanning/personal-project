@@ -1,4 +1,40 @@
 .cart {
   position: absolute;
   z-index: 10;
+  color: white;
+  background-color: black;
+  align-items: center;
+  width: 40vw;
+}
+
+.delete-btn {
+  width: 250px;
+  height: 35px;
+  border-radius: 10%;
+  border: 2px solid white;
+  background-color: #19191a;
+  color: white;
+  font-size: large;
+}
+
+.delete-btn:hover {
+  cursor: pointer;
+  color: #fb8b24;
+  border: 3px solid #fb8b24;
+}
+
+.check-out-btn {
+  width: 250px;
+  height: 35px;
+  border-radius: 10%;
+  border: 2px solid white;
+  background-color: #19191a;
+  color: white;
+  font-size: large;
+}
+
+.check-out-btn:hover {
+  cursor: pointer;
+  color: #fb8b24;
+  border: 3px solid #fb8b24;
 }

@@ -5,29 +5,37 @@ const Cart = (props) => {
   const { visible } = props;
   const [ products, setProducts ] = useState([]);
 
-  // Use local storage to get products. Where should we save products to ls?
-  useEffect(() => {
-
+  const checkCartAndSetProducts = () => {
     const existingCart = localStorage.getItem('cart')
     if(existingCart !== null){
-
+  
       let parsedProducts = JSON.parse(existingCart)
       
       setProducts(parsedProducts);
     } 
-  }, [visible]) 
+  }
 
+  useEffect(checkCartAndSetProducts, [visible]) 
+
+  useEffect(() => {
+    window.addEventListener('storage', checkCartAndSetProducts)
+    return () => window.removeEventListener('storage', checkCartAndSetProducts);
+  }, []);
 
   const deleteProducts = (indexToDelete) => {
     let filteredProducts = products.filter((_, index) => {
         return indexToDelete !== index;
       });
-      console.log("Filtered products", filteredProducts);
+    console.log("Filtered products", filteredProducts);
     // call setProducts with the new array
+    setProducts(filteredProducts)
+    // convert filteredProducts to JSON string
+    const filteredProductsJSON = JSON.stringify(filteredProducts);
+
     // update localStorage with the new array
+    localStorage.setItem('cart', filteredProductsJSON);
   };
   
-
   return (
     <div className='cart'>
       {visible &&

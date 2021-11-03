@@ -8,7 +8,7 @@ module.exports = {
     console.log(gender);
 
     // query products table WHERE type == type we got
-    const results = await db.products.where(`gender LIKE $1`, [gender]);;
+    const results = await db.products.where(`gender ILIKE $1`, [gender]);;
 
     return res.status(200).send(results);
   },

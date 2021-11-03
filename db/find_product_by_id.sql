@@ -1,2 +1,2 @@
 SELECT * FROM products
-WHERE id = $1;
+WHERE id LIKE $1;

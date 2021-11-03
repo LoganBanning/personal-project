@@ -1,4 +1,5 @@
 import React from 'react';
+import './product.css';
 
 const Product = (props) => {
     const { product } = props;
@@ -17,14 +18,15 @@ const Product = (props) => {
       const myJSON = JSON.stringify(products); 
 
       localStorage.setItem('cart', myJSON);
+      window.dispatchEvent(new Event('storage'));
     }
 
   return (
-    <div>
-      <img src={product.imgurl}></img>
+    <div className='product'>
+      <img src={product.imgurl} className='product-img'></img>
       <div>{product.name}</div>
       <div>{product.price}</div>
-      <button onClick={saveProduct}>ADD TO CART</button>
+      <button className='add-to-cart-btn' onClick={saveProduct}>ADD TO CART</button>
     </div>
   );
 };

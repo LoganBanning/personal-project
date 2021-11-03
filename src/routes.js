@@ -5,7 +5,7 @@ import Landing from './Components/Landing/Landing';
 //import womensComponent from './Components/womensComponent';
 import registerComponent from './Components/registerComponent';
 import cartComponent from './Components/Cart/cartComponent';
-import Products from './Components/products';
+import Products from './Components/Products/products';
 
 export default (
   <Switch>

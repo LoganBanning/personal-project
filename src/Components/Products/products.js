@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import Nav from './Nav/Nav';
-import Footer from './Footer/Footer';
+import Nav from '../Nav/Nav';
+import Footer from '../Footer/Footer';
 import axios from 'axios';
-import Product from './product';
+import Product from '../Product/product';
+import './products.css';
 
 const Products = (props) => {
   const { gender } = props;
@@ -18,7 +19,7 @@ const Products = (props) => {
   return (
     <div id="something">
       <Nav />
-      <div>
+      <div className='products-container'>
         {products.map((product) => {
           return <Product product={product} />
         })}
