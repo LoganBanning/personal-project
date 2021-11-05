@@ -48,7 +48,9 @@ const Cart = (props) => {
               </>
             )
           })}
+          <div>
           <button className='check-out-btn'>CHECK OUT</button>
+          </div>
         </div>
       }
     </div>

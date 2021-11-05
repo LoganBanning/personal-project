@@ -6,6 +6,8 @@ import Landing from './Components/Landing/Landing';
 import registerComponent from './Components/registerComponent';
 import cartComponent from './Components/Cart/cartComponent';
 import Products from './Components/Products/products';
+import Login from './Components/Login/Login';
+import SignUp from './Components/SignUp/SignUp';
 
 export default (
   <Switch>
@@ -20,5 +22,7 @@ export default (
   </Route>
   <Route path='/register' component={registerComponent} />
   <Route path='/cart' component={cartComponent} />
+  <Route path='/login' component={Login} />
+  <Route path='/signup' component={SignUp} />
 </Switch>
 );

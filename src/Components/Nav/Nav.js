@@ -4,7 +4,6 @@ import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Logo from '../Logo';
 import './Nav.css';
-import CartImage from '../Images/CartImage';
 import {AiOutlineShoppingCart} from 'react-icons/ai';
 import Cart from '../Cart/cartComponent';
 
@@ -25,35 +24,46 @@ const Nav = (props) => {
         </Link>
       </div>
       <div>
-        <Link className='links' to='/'>
+        <Link className='ape-link links' to='/'>
       <h1 className='brand-name'>APE</h1>
         </Link>
         <nav className='nav-links'>
-          <Link className='links' to='/mens'>
+          <Link className='mens-link links' to='/mens'>
             <div>MENS</div>
           </Link>
-          <Link className='links' to='/womens'>
+          <Link className='womens-link links' to='/womens'>
             <div>WOMENS</div>
           </Link>
-          <Link className='links'>
+          <Link className='kids-link links'>
             <div>KIDS</div>
           </Link>
-          <Link className='links'>
+          <Link className='surf-link links'>
             <div>SURF</div>
           </Link>
-          <Link className='links'>
+          <Link className='snow-link links'>
             <div>SNOW</div>
           </Link>
-          <Link className='links'>
+          <Link className='sale-link links'>
             <div>SALE</div>
           </Link>
         </nav>
       </div>
+      <div className='search-and-login'>
+        <div className='login-sign-up'>
+          <Link to='/login' className='links login-link'>
+          <p>Login</p>
+          </Link>
+          <p>||</p>
+          <Link to='/signup' className='links sign-up-link'>
+          <p>Sign Up</p>
+          </Link>
+          </div>
       <div className='search'>
       <input className='search-input' onChange={(e) => setSearch(e.target.value)}></input>
       <button className='search-btn'>SEARCH</button>
       <AiOutlineShoppingCart  className='cart-img' onClick={toggleCart} />
       <Cart visible={isCartOpen}/>
+      </div>
       </div>
     </div>
   )

@@ -6,6 +6,8 @@ const session = require('express-session');
 const productsCtrl = require('./controllers/products');
 const addToProCtrl = require('./controllers/addToCart');
 const addSub = require('./controllers/addSub');
+const login = require('./controllers/user');
+const signUp = require('./controllers/user');
 
 
 const app = express();
@@ -34,6 +36,8 @@ app.use(session({
 app.get("/api/products/:gender", productsCtrl.getProducts);
 app.get('/api/cart_items/:id', addToProCtrl.addToCart);
 app.post('/api/subscribers', addSub.subscribe);
+app.post('/api/login', login.login);
+app.post('/api/signup', signUp.signUp);
 
 
 app.listen(PORT, () => console.log(`running on ${PORT}`));

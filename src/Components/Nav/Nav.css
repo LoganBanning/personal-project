@@ -19,9 +19,50 @@
   text-decoration: none;
 }
 
-.links:hover {
+.ape-link:hover {
+  font-size: large;
+  color: #70e000;
+  font-weight: bold;
+  cursor: crosshair;
+}
+.mens-link:hover {
   font-size: large;
   color: #fb8b24;
+  font-weight: bold;
+}
+.womens-link:hover {
+  font-size: large;
+  color: #be0aff;
+  font-weight: bold;
+}
+.kids-link:hover {
+  font-size: large;
+  color: #0aefff;
+  font-weight: bold;
+}
+.surf-link:hover {
+  font-size: large;
+  color: #147df5;
+  font-weight: bold;
+}
+.snow-link:hover {
+  font-size: large;
+  color: #ffd300;
+  font-weight: bold;
+}
+.sale-link:hover {
+  font-size: large;
+  color: #ff0000;
+  font-weight: bold;
+}
+.login-link:hover {
+  font-size: large;
+  color: #70e000;
+  font-weight: bold;
+}
+.sign-up-link:hover {
+  font-size: large;
+  color: #0aefff;
   font-weight: bold;
 }
 
@@ -46,10 +87,7 @@
   padding-left: 50%;
 }
 
-.brand-name:hover {
-  color: #fb8b24;
-  cursor: crosshair;
-}
+
 
 .search {
   position: absolute;
@@ -62,6 +100,11 @@
 .search-input {
   width: 150px;
   height: 25px;
+  border: 2px solid white;
+  border-radius: 4px;
+  background-color: #19191a;
+  font-weight: bold;
+  color: white;
 }
 
 .search-btn {
@@ -87,4 +130,18 @@
 
 .cart-img:hover {
   cursor: pointer;
+}
+
+.search-and-login {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding-left: 170px;
+}
+
+.login-sign-up {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 40%;
 }

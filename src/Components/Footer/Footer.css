@@ -29,6 +29,11 @@
 .subscribe-input {
   width: 250px;
   height: 20px;
+  border: 2px solid white;
+  border-radius: 4px;
+  background-color: #19191a;
+  font-weight: bold;
+  color: white;
 }
 
 .sub-btn {

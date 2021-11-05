@@ -19,8 +19,8 @@
 
 .delete-btn:hover {
   cursor: pointer;
-  color: #fb8b24;
-  border: 3px solid #fb8b24;
+  color: #d00000;
+  border: 3px solid #d00000;
 }
 
 .check-out-btn {
@@ -35,6 +35,6 @@
 
 .check-out-btn:hover {
   cursor: pointer;
-  color: #fb8b24;
-  border: 3px solid #fb8b24;
+  color: #70e000;
+  border: 3px solid #70e000;
 }
