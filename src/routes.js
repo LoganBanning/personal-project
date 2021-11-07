@@ -8,6 +8,9 @@ import cartComponent from './Components/Cart/cartComponent';
 import Products from './Components/Products/products';
 import Login from './Components/Login/Login';
 import SignUp from './Components/SignUp/SignUp';
+import KidsComponent from './Components/Kids/Kids';
+import SurfComponent from './Components/Surf/Surf';
+import SnowComponent from './Components/Snow/Snow';
 
 export default (
   <Switch>
@@ -24,5 +27,8 @@ export default (
   <Route path='/cart' component={cartComponent} />
   <Route path='/login' component={Login} />
   <Route path='/signup' component={SignUp} />
+  <Route path='/kids' component={KidsComponent} />
+  <Route path='/surf' component={SurfComponent} />
+  <Route path='/snow' component={SnowComponent} />
 </Switch>
 );

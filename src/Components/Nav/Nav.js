@@ -34,13 +34,13 @@ const Nav = (props) => {
           <Link className='womens-link links' to='/womens'>
             <div>WOMENS</div>
           </Link>
-          <Link className='kids-link links'>
+          <Link className='kids-link links' to='/kids'>
             <div>KIDS</div>
           </Link>
-          <Link className='surf-link links'>
+          <Link className='surf-link links' to='/surf'>
             <div>SURF</div>
           </Link>
-          <Link className='snow-link links'>
+          <Link className='snow-link links' to='/snow'>
             <div>SNOW</div>
           </Link>
           <Link className='sale-link links'>

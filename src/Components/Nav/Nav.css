@@ -17,6 +17,7 @@
 .links {
   color: white;
   text-decoration: none;
+  z-index: 10;
 }
 
 .ape-link:hover {

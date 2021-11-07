@@ -4,10 +4,14 @@ import Footer from '../Footer/Footer';
 import axios from 'axios';
 import './Login.css';
 import LoginImage from '../Images/LoginImage';
+import { connect } from 'react-redux';
 
 const LoginComponent = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loggedIn, setLoggedIn] = useState(false);
+
+
 
   const login = async () => {
     const response = await axios.post('/api/login', {email, password})
@@ -27,7 +31,7 @@ const LoginComponent = (props) => {
         <input className='login-input' type='password' placeholder='PASSWORD' onChange={(e) => setPassword(e.target.value)}></input>
           </div>
           <div>
-        <button className='login-button' onClick={() => login()}>Log In</button>
+        <button className='login-button' onClick={login}>Log In</button>
           </div>
         </div>
       </div>

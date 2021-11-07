@@ -3,14 +3,14 @@ const bcrypt = require('bcryptjs');
 const signUp = async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
   const db = req.app.get('db');
-  const result = await db.user.find_user_by_email([email]);
+  const result = await db.find_user_by_email([email]);
   const existingUser = result[0];
   if(existingUser){
     return res.status(409).send('Email already in use, please sign in.');
   } else {
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(password, salt);
-    const registeredUser = await db.user.create_user([firstName, lastName, email, hash]);
+    const registeredUser = await db.create_user([firstName, lastName, email, hash]);
     const user = registeredUser[0];
     req.session.user = {
       firstName: user.firstName,
@@ -26,9 +26,8 @@ const signUp = async (req, res) => {
 const login = async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
   const db = req.app.get('db');
-  const user = await db.users.findOne({
-    email,
-  });
+  const [user] = await db.get_user(email);
+  console.log(user);
   if(!user){
     return res.status(401).send('User not found.  Please register as a new user before logging in')
   } 
