@@ -27,7 +27,7 @@ const login = async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
   const db = req.app.get('db');
   const [user] = await db.get_user(email);
-  console.log(user);
+
   if(!user){
     return res.status(401).send('User not found.  Please register as a new user before logging in')
   } 
@@ -36,11 +36,12 @@ const login = async (req, res) => {
     return res.status(403).send('Incorrect password')
   } 
   req.session.user = {
-    firstName: user.firstName,
-    lastName: user.lastName,
+    firstName: user.firstname,
+    lastName: user.lastname,
     email: user.email,
     id: user.id,
   };
+  console.log("user: ", user)
     return res.send(req.session.user);
 }
 

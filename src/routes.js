@@ -11,6 +11,7 @@ import SignUp from './Components/SignUp/SignUp';
 import KidsComponent from './Components/Kids/Kids';
 import SurfComponent from './Components/Surf/Surf';
 import SnowComponent from './Components/Snow/Snow';
+import SaleComponent from './Components/Sale/Sale';
 
 export default (
   <Switch>
@@ -30,5 +31,6 @@ export default (
   <Route path='/kids' component={KidsComponent} />
   <Route path='/surf' component={SurfComponent} />
   <Route path='/snow' component={SnowComponent} />
+  <Route path='/sale' component={SaleComponent} />
 </Switch>
 );

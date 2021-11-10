@@ -1,4 +1,9 @@
-import { createStore } from 'redux';
-import reducer, { updateCart } from './reducer';
+import { createStore, combineReducers } from 'redux';
+import userReducer from './userReducer';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
-export default createStore(reducer, {updateCart});
+const rootReducer = combineReducers({
+  user: userReducer
+})
+
+export default createStore(rootReducer, composeWithDevTools());

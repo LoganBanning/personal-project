@@ -1,6 +1,6 @@
 .footer {
   width: 100vw;
-  height: 25vh;
+  height: 25%;
   background-color: #19191a;
   display: flex;
   margin-top: 0;
@@ -23,7 +23,7 @@
 .subscribe {
   display: flex;
   width: 100vw;
-  margin: 70px 15px 15px 700px;
+  margin: 70px 15px 15px 500px;
 }
 
 .subscribe-input {
@@ -54,3 +54,28 @@
   color: white;
   font-weight: bold;
 }
+
+@media (max-width: 1064px) {
+  .subscribe {
+    margin: 70px 30px 15px 400px;
+  }
+}
+
+@media (max-width: 960px) {
+  .subscribe {
+    margin: 70px 30px 15px 300px;
+  }
+}
+
+@media (max-width: 776px) {
+  .subscribe {
+    margin: 70px 30px 15px 100px;
+  }
+}
+
+@media (max-width: 576px) {
+  .subscribe {
+    display: none;
+  }
+}
+
