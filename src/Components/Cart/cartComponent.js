@@ -1,55 +1,38 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './cartComponent.css';
+import { Link, withRouter } from 'react-router-dom';
+import { checkCartAndSetProducts, deleteProducts } from '../CartUtils/CartUtils';
+import {connect} from 'react-redux';
+
 
 const Cart = (props) => {
   const { visible } = props;
-  const [ products, setProducts ] = useState([]);
 
-  const checkCartAndSetProducts = () => {
-    const existingCart = localStorage.getItem('cart')
-    if(existingCart !== null){
-  
-      let parsedProducts = JSON.parse(existingCart)
-      
-      setProducts(parsedProducts);
-    } 
-  }
-
-  useEffect(checkCartAndSetProducts, [visible]) 
+  useEffect(() => checkCartAndSetProducts(props.dispatch), [visible]) 
 
   useEffect(() => {
-    window.addEventListener('storage', checkCartAndSetProducts)
-    return () => window.removeEventListener('storage', checkCartAndSetProducts);
+    console.log(props);
+    window.addEventListener('storage', () => checkCartAndSetProducts(props.dispatch))
+    return () => window.removeEventListener('storage', () => checkCartAndSetProducts(props.dispatch));
   }, []);
-
-  const deleteProducts = (indexToDelete) => {
-    let filteredProducts = products.filter((_, index) => {
-        return indexToDelete !== index;
-      });
-    console.log("Filtered products", filteredProducts);
-    // call setProducts with the new array
-    setProducts(filteredProducts)
-    // convert filteredProducts to JSON string
-    const filteredProductsJSON = JSON.stringify(filteredProducts);
-
-    // update localStorage with the new array
-    localStorage.setItem('cart', filteredProductsJSON);
-  };
-  
   return (
     <div className='cart'>
       {visible &&
-        <div >
-          {products.map((product, index) => {
+        <div className='all-cart-products'>
+          {props.cart.cart.map((product, index) => {
             return (
               <>
+                <img src={product.imgurl} className='cart-product-img'></img>
                 <p>{product.name}</p>
-                <button className='delete-btn' onClick={() => deleteProducts(index)} >DELETE</button>
+                <p>{product.price}</p>
+              <button className='delete-btn' onClick={() => deleteProducts(props.cart.cart, props.dispatch, index)} >DELETE</button>
               </>
             )
           })}
           <div>
+            <Link to='/checkout'>
           <button className='check-out-btn'>CHECK OUT</button>
+            </Link>
           </div>
         </div>
       }
@@ -57,4 +40,8 @@ const Cart = (props) => {
   )
 }
 
-export default Cart;
+const mapStateToProps = (state) => {
+ return state;
+}
+
+export default withRouter(connect(mapStateToProps)(Cart));

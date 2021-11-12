@@ -5,7 +5,7 @@ module.exports = {
   getProducts: async (req, res) => {
     const db = await req.app.get('db')
     const gender = req.params['gender']; // api/products/mens
-    console.log(gender);
+
 
     // query products table WHERE type == type we got
     const results = await db.products.where(`gender ILIKE $1`, [gender]);;

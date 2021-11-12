@@ -35,6 +35,7 @@ app.use(session({
 
 app.get("/api/products/:gender", productsCtrl.getProducts);
 app.get('/api/cart_items/:id', addToProCtrl.addToCart);
+app.get('/api/allproducts', productsCtrl.getAllProducts);
 app.post('/api/subscribers', addSub.subscribe);
 app.post('/api/login', login.login);
 app.post('/api/signup', signUp.signUp);

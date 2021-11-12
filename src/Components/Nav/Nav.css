@@ -151,6 +151,12 @@
   width: 40%;
 }
 
+/* .greeting-logout{
+  display: flex;
+  flex-direction: row;;
+  width: 60%;
+} */
+
 @media (max-width: 1186px) {
   .nav-links {
     width: 40vw;
