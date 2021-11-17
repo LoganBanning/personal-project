@@ -15,7 +15,7 @@ module.exports = {
 
   getAllProducts: async (req, res) => {
     const db = await req.app.get('db');
-    const results = await db.products;
+    const results = await db.get_all_products();
 
     return res.status(200).send(results);
   },

@@ -8,14 +8,14 @@ import Login from './Components/Login/Login';
 import SignUp from './Components/SignUp/SignUp';
 import SaleComponent from './Components/Sale/Sale';
 import CheckoutComponent from './Components/Checkout/Checkout';
+import AllProductsComponent from './Components/AllProducts/AllProducts';
 
 export default (
   <Switch>
   <Route exact path='/' component={Landing} />
   {/* <Route path='/mens' component={mensComponent} />
   <Route path='/womens' component={womensComponent} /> */}
-  <Route path='/allproducts'>
-    <Products></Products>
+  <Route path='/allproducts' component={AllProductsComponent}>
   </Route>
   <Route path='/mens' >
     <Products gender="mens"></Products>

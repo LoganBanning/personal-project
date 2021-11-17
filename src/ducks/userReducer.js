@@ -7,6 +7,7 @@ const initialState = {
 
 export const UPDATE_USER = 'UPDATE_USER';
 export const LOGIN = 'LOGIN';
+export const ADD_USER = 'ADD_USER';
 
 // export const Login = (productInfo) => {
   
@@ -34,6 +35,11 @@ export default function userReducer(state = initialState, action) {
           ...state,
           ...action.payload
         }
+    case ADD_USER: 
+        return { 
+          ...state,
+          ...action.payload
+                  }
     default:
         return state;
   }

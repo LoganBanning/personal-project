@@ -1,17 +1,21 @@
 .beach-img {
   width: 100vw;
-  height: auto;
+  height: 100vh;
   margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://www.jetsetter.com//uploads/sites/7/2019/10/vH0BLDMG-1380x690.jpg');
+  background-size: cover;
 }
 
 .login-inputs {
-  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   width: 100vw;
   height: 30vh;
   align-items: center;
-  justify-content: space-around;
-  top: 50%;
-  margin: 15px 0 15px 37%;
 }
 
 .login-input {
@@ -22,6 +26,8 @@
   background-color: #19191a;
   color: white;
   font-weight: bold;
+  /* box-shadow: 10px 5px 5px black; */
+  box-shadow: 12px 12px 2px 1px black;
 }
 
 .login-button {
@@ -32,7 +38,8 @@
   background-color: #19191a;
   color: white;
   font-size: large;
-  margin-left: 20px;
+  /* box-shadow: 10px 5px 5px black; */
+  box-shadow: 12px 12px 2px 1px black;
 }
 
 .login-button:hover {

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./Footer.css";
 import Logo from "../Logo";
 import axios from "axios";
+import { Link, withRouter } from 'react-router-dom';
+import {connect } from 'react-redux';
 
 const Footer = (props) => {
   const [subscribe, setSubscribe] = useState("");
@@ -15,7 +17,9 @@ const Footer = (props) => {
   return (
     <div className="footer">
       <div className="footer-logo Logo">
+        <Link to='/'>
         <Logo />
+        </Link>
         <div className="subscribe">
           {isSubcribed ? (
             <div className="did-sub">Thank you {subscribe}!</div>
@@ -38,4 +42,10 @@ const Footer = (props) => {
   );
 };
 
-export default Footer;
+const mapStateToProps = (state) => {
+  return (
+    state
+  )
+}
+
+export default withRouter(connect(mapStateToProps)(Footer));

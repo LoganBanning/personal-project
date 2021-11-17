@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 import './SignUp.css';
 import SignUpImage from '../Images/SignUpImage';
+import { connect, dispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { ADD_USER, LOGIN } from '../../ducks/userReducer';
 
 const SignUpComponent = (props) => {
   const [firstName, setFirstName] = useState('');
@@ -11,15 +14,32 @@ const SignUpComponent = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const history = useHistory();
+
   const signUp = async () => {
     const response = await axios.post('/api/signup', {firstName, lastName, email, password})
+    if(response.status === 201) {
+      props.dispatch({
+        type: LOGIN,
+      })
+      const newUser = {
+        firstName: response.data.firstName,
+        lastName: response.data.lastName, 
+        email: response.data.email,
+        password: response.data.email,
+      }
+      props.dispatch({
+        type: ADD_USER, 
+        payload: newUser,
+      })
+      history.push('/');
+    }
   }
 
   return (
     <div>
       <Nav />
-      <div>
-    <SignUpImage />
+      <div className='sign-up-img'>
     <div className='sign-up-inputs'>
       <div>
       <input className='sign-up-input' placeholder='FIRST NAME' onChange={(e) => setFirstName(e.target.value)}></input>
@@ -43,4 +63,4 @@ const SignUpComponent = (props) => {
   )
 }
 
-export default SignUpComponent;
+export default connect()(SignUpComponent);

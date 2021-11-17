@@ -1,22 +1,28 @@
-.landing-img {
+.landing-container {
   width: 100vw;
-  height: auto;
+  height: 100vh;
   margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://cdn.wallpapersafari.com/60/5/MgWFCX.jpg' );
+  background-size: cover;
 }
 
+
 .intro-text {
-  position: absolute;
-  top: 60%;
-  right: 28%;
   color: #ff312e;
   font-weight: bold;
   background-color: #19191a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 12px 12px 2px 1px black;
+
 }
 
 .shop-now-btn {
-  position: absolute;
-  margin-top: 20px;
-  left: 25%;
   width: 250px;
   height: 35px;
   border-radius: 10%;

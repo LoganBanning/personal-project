@@ -15,6 +15,7 @@ const Cart = (props) => {
     window.addEventListener('storage', () => checkCartAndSetProducts(props.dispatch))
     return () => window.removeEventListener('storage', () => checkCartAndSetProducts(props.dispatch));
   }, []);
+  console.log(props);
   return (
     <div className='cart'>
       {visible &&
@@ -29,7 +30,10 @@ const Cart = (props) => {
               </>
             )
           })}
-          <div>
+          <div className='checkout'>
+            <p className='total'>
+            Total: ${props.cart.total}
+            </p>
             <Link to='/checkout'>
           <button className='check-out-btn'>CHECK OUT</button>
             </Link>

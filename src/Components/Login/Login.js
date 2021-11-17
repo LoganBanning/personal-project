@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 import axios from 'axios';
@@ -11,7 +11,6 @@ import { useHistory } from 'react-router-dom';
 const LoginComponent = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [loggedIn, setLoggedIn] = useState(false);
 
   const history = useHistory();
 
@@ -42,8 +41,7 @@ const LoginComponent = (props) => {
   return (
     <div>
       <Nav />
-      <div>
-        <LoginImage className='beach-img' />
+      <div className='beach-img'>
         <div className='login-inputs'>
           <div>
         <input className='login-input' placeholder='EMAIL' onChange={(e) => setEmail(e.target.value)}></input>

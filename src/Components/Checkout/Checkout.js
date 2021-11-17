@@ -30,6 +30,9 @@ const CheckoutComponent = (props) => {
         })}
       </div>
       <div className='check-out-container'>
+        <p className='total'>
+        Total: ${props.cart.total}
+        </p>
         <p className='check-out-message'>If you're ready to checkout please enter your card info below!</p>
         <input className='check-out-inputs' placeholder='NAME ON CARD'></input>
         <input className='check-out-inputs' placeholder='CARD NUMBER'></input>

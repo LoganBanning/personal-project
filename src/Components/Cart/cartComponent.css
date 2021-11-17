@@ -2,7 +2,7 @@
   position: absolute;
   z-index: 10;
   color: white;
-  background-color: black;
+  background-color: #19191a;
   align-items: center;
   width: 400px;
   right: 0%;
@@ -33,6 +33,17 @@
   cursor: pointer;
   color: #d00000;
   border: 3px solid #d00000;
+}
+
+.checkout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.total {
+  font-size: large;
+  font-weight: bold;
 }
 
 .check-out-btn {
