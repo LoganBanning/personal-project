@@ -48,7 +48,7 @@ const AccountComponent = (props) => {
     <div>
       <Nav />
       <div className="all-user-info">
-        <p className='account-greeting'>Hello {firstName}</p>
+        <h1 className='account-greeting'>Hello {firstName}!</h1>
         <div className='user-info'>
         <label className='user-data'>First Name</label>
         <input className='user-input' onChange={(e) => setFirstName(e.target.value)} value={firstName}/>
