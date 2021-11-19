@@ -8,6 +8,8 @@ const addToProCtrl = require('./controllers/addToCart');
 const addSub = require('./controllers/addSub');
 const login = require('./controllers/user');
 const signUp = require('./controllers/user');
+const updateUser = require('./controllers/user');
+const deleteUser = require('./controllers/user');
 
 
 const app = express();
@@ -39,6 +41,7 @@ app.get('/api/allproducts', productsCtrl.getAllProducts);
 app.post('/api/subscribers', addSub.subscribe);
 app.post('/api/login', login.login);
 app.post('/api/signup', signUp.signUp);
-
+app.put('/api/updateuser', updateUser.updateUser);
+app.delete('/api/deleteuser/:email', deleteUser.deleteUser);
 
 app.listen(PORT, () => console.log(`running on ${PORT}`));

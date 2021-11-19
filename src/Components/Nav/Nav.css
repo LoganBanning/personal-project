@@ -69,6 +69,11 @@
   color: #70e000;
   font-weight: bold;
 }
+.account-link:hover {
+  /* font-size: large; */
+  color: #70e000;
+  /* font-weight: bold; */
+}
 .sign-up-link:hover {
   font-size: large;
   color: #0aefff;

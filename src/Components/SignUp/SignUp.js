@@ -3,8 +3,7 @@ import axios from 'axios';
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 import './SignUp.css';
-import SignUpImage from '../Images/SignUpImage';
-import { connect, dispatch } from 'react-redux';
+import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { ADD_USER, LOGIN } from '../../ducks/userReducer';
 
@@ -40,6 +39,9 @@ const SignUpComponent = (props) => {
     <div>
       <Nav />
       <div className='sign-up-img'>
+        <div>
+          <h1 className='sign-up-greeting'>JOIN US, WE GET WILD HERE!</h1>
+        </div>
     <div className='sign-up-inputs'>
       <div>
       <input className='sign-up-input' placeholder='FIRST NAME' onChange={(e) => setFirstName(e.target.value)}></input>

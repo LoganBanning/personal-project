@@ -62,11 +62,14 @@ const Nav = (props) => {
         <div className='login-sign-up'>
           {isLoggedIn && 
           <div>
-            <p className='greeting-logout'>Hello <span className='name'>
+            <p>Hello <span className='name'>
             {firstName}
               </span></p>
-          <Link to='/' className='links'>
-            <p>Sign Out</p></Link>
+              <Link to='/account' className='account-link links'>
+              <p>Account Settings</p>
+              </Link>
+          {/* <Link to='/' className='links'>
+            <p>Sign Out</p></Link> */}
           </div>
           }
           {!isLoggedIn && [

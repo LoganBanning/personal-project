@@ -9,6 +9,7 @@ import SignUp from './Components/SignUp/SignUp';
 import SaleComponent from './Components/Sale/Sale';
 import CheckoutComponent from './Components/Checkout/Checkout';
 import AllProductsComponent from './Components/AllProducts/AllProducts';
+import AccountComponent from './Components/Account/AccountComponent';
 
 export default (
   <Switch>
@@ -38,5 +39,6 @@ export default (
   </Route>
   <Route path='/sale' component={SaleComponent} />
   <Route path='/checkout' component={CheckoutComponent} />
+  <Route path='/account' component={AccountComponent} />
 </Switch>
 );

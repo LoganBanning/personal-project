@@ -42,6 +42,9 @@ const LoginComponent = (props) => {
     <div>
       <Nav />
       <div className='beach-img'>
+        <div className='login-greeting'>
+          <h1>WELCOME BACK YOU CRAZY ANIMAL!</h1>
+        </div>
         <div className='login-inputs'>
           <div>
         <input className='login-input' placeholder='EMAIL' onChange={(e) => setEmail(e.target.value)}></input>

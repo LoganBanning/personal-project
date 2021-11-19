@@ -7,6 +7,14 @@
   align-items: center;
   background-image: url('https://www.jetsetter.com//uploads/sites/7/2019/10/vH0BLDMG-1380x690.jpg');
   background-size: cover;
+  flex-direction: column;
+}
+
+.login-greeting {
+  display: flex;
+  background-color: #19191a;
+  color:#fb8b24;
+  box-shadow: 12px 12px 2px 1px black;
 }
 
 .login-inputs {

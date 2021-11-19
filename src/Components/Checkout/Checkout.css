@@ -33,6 +33,7 @@
   background-color: #19191a;
   color: white;
   font-weight: bold;
+  box-shadow: 12px 12px 2px 1px black;
 }
 
 .submit-btn {
@@ -43,6 +44,7 @@
   background-color: #19191a;
   color: white;
   font-size: large;
+  box-shadow: 12px 12px 2px 1px black;
 }
 
 .submit-btn:hover {

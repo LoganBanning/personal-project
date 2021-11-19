@@ -23,6 +23,28 @@ const signUp = async (req, res) => {
   }
 }
 
+const deleteUser = async (req, res) => {
+  const { email } = req.params;
+  console.log(email);
+  const db = req.app.get('db');
+  const deleteUser = await db.delete_user([email]);
+  return res.sendStatus(200);
+}
+
+const updateUser = async (req, res) => {
+  try {
+    const { firstName, lastName, email } = req.body;
+  const db = req.app.get('db');
+  const [user] = await db.get_user(email);
+  console.log("Found user", user)
+  const updatedUser = await db.update_user([user.id, firstName, lastName, email]);
+  return res.status(200).send(updatedUser);
+  }
+  catch (error) {
+    console.error("Error updating user", error);
+  }
+}
+
 const login = async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
   const db = req.app.get('db');
@@ -66,6 +88,8 @@ const getUser = async (req, res) => {
 module.exports = {
   signUp,
   login,
+  updateUser,
+  deleteUser,
   logout,
   getUser,
 }
