@@ -1,4 +1,5 @@
 const bcrypt = require('bcryptjs');
+const nodemailer = require('./nodemailer');
 
 const signUp = async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
@@ -18,7 +19,7 @@ const signUp = async (req, res) => {
       email: user.email,
       id: user.id,
     };
-    console.log(user)
+    nodemailer.main(email);
     return res.status(201).send(user) ;
   }
 }

@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import './Checkout.css';
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 import { connect } from 'react-redux';
 import { deleteProducts } from '../CartUtils/CartUtils';
+// import {PaymentElement } from '@stripe/react-stripe-js';
+import StripeContainer from '../Payment/StripeContainer';
+
 
 
 const CheckoutComponent = (props) => {
 
-  // const [ nameOnCard, setNameOnCard ] = useState('');
-
+  const [showItem, setShowItem] = useState(false);
 
   return (
     <div>
@@ -33,12 +35,13 @@ const CheckoutComponent = (props) => {
         <p className='total'>
         Total: ${props.cart.total}
         </p>
-        <p className='check-out-message'>If you're ready to checkout please enter your card info below!</p>
-        <input className='check-out-inputs' placeholder='NAME ON CARD'></input>
-        <input className='check-out-inputs' placeholder='CARD NUMBER'></input>
-        <input className='check-out-inputs' placeholder='EXPIRATION DATE'></input>
-        <input className='check-out-inputs' placeholder='CVV'></input>
-        <button className='submit-btn'>SUBMIT</button>
+        <p className='check-out-message'>Ready to checkout?</p>
+        <div>
+        {showItem ? <StripeContainer/> : 
+        <button onClick={() => setShowItem(true)} className='submit-btn'>CHECKOUT</button>
+        
+        }
+        </div>
       </div>
       <Footer />
     </div>

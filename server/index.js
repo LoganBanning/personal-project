@@ -10,6 +10,8 @@ const login = require('./controllers/user');
 const signUp = require('./controllers/user');
 const updateUser = require('./controllers/user');
 const deleteUser = require('./controllers/user');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_TEST);
+
 
 
 const app = express();
@@ -42,6 +44,27 @@ app.post('/api/subscribers', addSub.subscribe);
 app.post('/api/login', login.login);
 app.post('/api/signup', signUp.signUp);
 app.put('/api/updateuser', updateUser.updateUser);
-app.delete('/api/deleteuser/:email', deleteUser.deleteUser);
+app.delete('/api/deleteuser/:email', deleteUser.deleteUser);  
+app.post('/api/payment', async(req, res) => {
+  let {amount, id} = req.body
+  try {
+    const payment = await stripe.paymentIntents.create({
+      amount,
+      currency: 'USD',
+      description: 'apparel',
+      payment_method: id,
+      confirm: true,
+    })
+    res.json({
+      message: 'payment successful',
+      success: true,
+    })
+  } catch (e) {
+    res.json({
+      message: 'payment failed',
+      success: false,
+    })
+  }
+})
 
 app.listen(PORT, () => console.log(`running on ${PORT}`));

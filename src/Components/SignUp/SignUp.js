@@ -35,6 +35,7 @@ const SignUpComponent = (props) => {
     }
   }
 
+
   return (
     <div>
       <Nav />
