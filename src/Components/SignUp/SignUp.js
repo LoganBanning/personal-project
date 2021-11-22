@@ -12,11 +12,12 @@ const SignUpComponent = (props) => {
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
 
   const history = useHistory();
 
   const signUp = async () => {
-    const response = await axios.post('/api/signup', {firstName, lastName, email, password})
+    const response = await axios.post('/api/signup', {firstName, lastName, email, password, phoneNumber})
     if(response.status === 201) {
       props.dispatch({
         type: LOGIN,
@@ -26,6 +27,7 @@ const SignUpComponent = (props) => {
         lastName: response.data.lastName, 
         email: response.data.email,
         password: response.data.email,
+        phoneNumber: response.data.phoneNumber,
       }
       props.dispatch({
         type: ADD_USER, 
@@ -55,6 +57,9 @@ const SignUpComponent = (props) => {
       </div>
       <div>
       <input className='sign-up-input' placeholder='PASSWORD' type='password' onChange={(e) => setPassword(e.target.value)}></input>
+      </div>
+      <div>      
+        <input className='sign-up-input' placeholder='PHONE NUMBER' onChange={(e) => setPhoneNumber(e.target.value)}></input>
       </div>
       <div>
       <button className='sign-up-button' onClick={() => signUp()}>Sign Up!</button>

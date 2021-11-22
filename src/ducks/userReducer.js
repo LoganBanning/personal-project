@@ -3,6 +3,7 @@ const initialState = {
   firstName: '',
   lastName: '',
   email: '',
+  phoneNumber: '',
 }
 
 export const UPDATE_USER = 'UPDATE_USER';

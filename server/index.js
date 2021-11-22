@@ -42,7 +42,7 @@ app.get('/api/cart_items/:id', addToProCtrl.addToCart);
 app.get('/api/allproducts', productsCtrl.getAllProducts);
 app.post('/api/subscribers', addSub.subscribe);
 app.post('/api/login', login.login);
-app.post('/api/signup', signUp.signUp);
+app.post('/api/signup',signUp.signUp);
 app.put('/api/updateuser', updateUser.updateUser);
 app.delete('/api/deleteuser/:email', deleteUser.deleteUser);  
 app.post('/api/payment', async(req, res) => {
