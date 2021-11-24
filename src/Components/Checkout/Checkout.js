@@ -20,7 +20,7 @@ const CheckoutComponent = (props) => {
         {props.cart.cart.map((product, index) => {
           return (
             <div className='product-info'>
-              <img src={product.imgurl} className='check-out-img' ></img>
+              <img src={product.imgurl} alt='product image' className='check-out-img' ></img>
               <p>{product.name}</p>
               <p>{product.type}</p>
               <p>{product.price}</p>

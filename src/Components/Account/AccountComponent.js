@@ -61,8 +61,8 @@ const AccountComponent = (props) => {
         <label className='user-data'>Email</label>
         <input className='user-input' onChange={(e) => setEmail(e.target.value)} value={email} />
         </div>
-        <button className='update-btn' onClick={updateUser}>Update</button>
-        <button className='delete-btn' onClick={deleteUser}>Delete</button>
+        <button className='update-btn' onClick={updateUser}>Update Account</button>
+        <button className='delete-btn' onClick={deleteUser}>Delete Account</button>
       </div>
       <Footer />
     </div>

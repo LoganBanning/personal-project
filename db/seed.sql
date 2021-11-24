@@ -39,3 +39,10 @@ CREATE TABLE subscribers (
   id SERIAL PRIMARY KEY,
   email TEXT
 );
+
+CREATE TABLE transactons (
+  id SERIAL PRIMARY KEY,
+  productId INTEGER REFERENCES products (id),
+  userId INTEGER REFERENCES ape_users(id),
+  orderNumber INT
+);

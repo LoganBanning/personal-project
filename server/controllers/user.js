@@ -33,7 +33,7 @@ const signUp = async (req, res) => {
     nodemailer.main(email);
 
     smsclient.messages
-      .create({ body: "Hi there", from: "+17407153899", to: phoneNumber })
+      .create({ body: "You're an animal!!  Thanks for joining us!", from: "+17407153899", to: +phoneNumber })
       .then((message) => console.log(message.sid))
       .catch((error) => console.log('smserror', error))
     return res.status(201).send(user);
@@ -65,6 +65,7 @@ const updateUser = async (req, res) => {
     console.error("Error updating user", error);
   }
 };
+
 
 const login = async (req, res) => {
   const { firstName, lastName, email, password } = req.body;
