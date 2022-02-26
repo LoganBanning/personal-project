@@ -20,6 +20,8 @@ const PORT = SERVER_PORT
 
 app.use(express.json());
 
+app.use(express.static(`${__dirname}/../build`));
+
 massive({
   connectionString: CONNECTION_STRING,
   ssl: {
@@ -67,4 +69,6 @@ app.post('/api/payment', async(req, res) => {
   }
 })
 
-app.listen(PORT, () => console.log(`running on ${PORT}`));
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => console.log(`running on ${port}`));
