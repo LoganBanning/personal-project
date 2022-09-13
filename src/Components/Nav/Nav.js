@@ -53,9 +53,9 @@ const Nav = (props) => {
           <Link className='snow-link links' to='/snow'>
             <div>SNOW</div>
           </Link>
-          <Link className='sale-link links' to='/sale'>
+          {/* <Link className='sale-link links' to='/sale'>
             <div>SALE</div>
-          </Link>
+          </Link> */}
         </nav>
       </div>
       <div className='search-and-login'>
