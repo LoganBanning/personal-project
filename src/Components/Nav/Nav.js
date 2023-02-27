@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Logo from '../Logo';
@@ -53,9 +52,9 @@ const Nav = (props) => {
           <Link className='snow-link links' to='/snow'>
             <div>SNOW</div>
           </Link>
-          {/* <Link className='sale-link links' to='/sale'>
+          <Link className='sale-link links' to='/sale'>
             <div>SALE</div>
-          </Link> */}
+          </Link>
         </nav>
       </div>
       <div className='search-and-login'>

@@ -6,7 +6,6 @@ import cartComponent from './Components/Cart/cartComponent';
 import Products from './Components/Products/products';
 import Login from './Components/Login/Login';
 import SignUp from './Components/SignUp/SignUp';
-import SaleComponent from './Components/Sale/Sale';
 import CheckoutComponent from './Components/Checkout/Checkout';
 import AllProductsComponent from './Components/AllProducts/AllProducts';
 import AccountComponent from './Components/Account/AccountComponent';
@@ -37,7 +36,9 @@ export default (
   <Route path='/snow'>
     <Products gender='snow'></Products>
   </Route>
-  <Route path='/sale' component={SaleComponent} />
+  <Route path='/sale'>
+    <Products gender='sale'></Products>
+  </Route>
   <Route path='/checkout' component={CheckoutComponent} />
   <Route path='/account' component={AccountComponent} />
 </Switch>
