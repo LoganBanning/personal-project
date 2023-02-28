@@ -36,9 +36,6 @@ export default (
   <Route path='/snow'>
     <Products gender='snow'></Products>
   </Route>
-  <Route path='/sale'>
-    <Products gender='sale'></Products>
-  </Route>
   <Route path='/checkout' component={CheckoutComponent} />
   <Route path='/account' component={AccountComponent} />
 </Switch>
