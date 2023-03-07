@@ -23,8 +23,8 @@ async function main(email) {
     from: '"Ape Apparel Co 👻" <apeapparelco@outlook.com>', // sender address
     to: email, // list of receivers
     subject: "Welcome!!", // Subject line
-    text: "Thanks so much for joining us, we can't wait to get weird with you.", // plain text body
-    html: "<b>Thanks so much for joining us, we can't wait to get weird with you.  You'll be the first to now about new products and sales!!</b>", // html body
+    text: "Thanks so much for joining us, we can't wait to get wild with you.", // plain text body
+    html: "<b>Thanks so much for joining us, we can't wait to get wild with you.  You'll be the first to now about new products and sales!!</b>", // html body
   });
 
   console.log("Message sent: %s", info.messageId);

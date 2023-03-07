@@ -19,7 +19,8 @@ id SERIAL PRIMARY KEY,
 firstName VARCHAR(50) NOT NULL,
 lastName VARCHAR(50) NOT NULL,
 email VARCHAR(75) NOT NULL,
-password TEXT NOT NULL
+password TEXT NOT NULL,
+phoneNumber VARCHAR(11)
 );
 
 CREATE TABLE cart_items (
